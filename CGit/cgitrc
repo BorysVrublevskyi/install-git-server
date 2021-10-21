@@ -1,0 +1,82 @@
+# /etc/cgitrc
+# For more read https://git.zx2c4.com/cgit/tree/cgitrc.5.txt
+
+#root-title=JA internal Git repositories
+#root-desc=Smart, fun, get things done!
+
+#css=/cgit-web/cgit.css
+css=/cgit-web/cgit-uberspace-mod.css
+#logo=/cgit-web/cgit.png
+logo=/cgit-web/ja-logo.png
+favicon=/cgit-web/favicon.ico
+#virtual-root=/
+clone-url=ssh://username@git:/git/$CGIT_REPO_URL
+robots=noindex, nofollow
+snapshots=none
+
+enable-blame=1 # css must contain blame styles
+enable-commit-graph=1
+enable-http-clone=0
+enable-index-links=1
+enable-index-owner=0
+enable-log-linecount=1
+
+# Highlight source code with python pygments-based highlighter
+source-filter=/var/www/cgit/filters/syntax-highlighting.sh
+
+# Format markdown, restructuredtext, manpages, text files, and html files
+# through the right converters
+about-filter=/var/www/cgit/filters/about-formatting.sh
+
+## Search for these files in the root of the default branch of repositories
+## for coming up with the about page:
+readme=:README.md
+readme=:readme.md
+readme=:README.mkd
+readme=:readme.mkd
+readme=:README.rst
+readme=:readme.rst
+readme=:README.html
+readme=:readme.html
+readme=:README.htm
+readme=:readme.htm
+readme=:README.txt
+readme=:readme.txt
+readme=:README
+readme=:readme
+readme=:INSTALL.md
+readme=:install.md
+readme=:INSTALL.mkd
+readme=:install.mkd
+readme=:INSTALL.rst
+readme=:install.rst
+readme=:INSTALL.html
+readme=:install.html
+readme=:INSTALL.htm
+readme=:install.htm
+readme=:INSTALL.txt
+readme=:install.txt
+readme=:INSTALL
+readme=:install
+
+## List of common mimetypes
+mimetype.gif=image/gif
+mimetype.html=text/html
+mimetype.jpg=image/jpeg
+mimetype.jpeg=image/jpeg
+mimetype.pdf=application/pdf
+mimetype.png=image/png
+mimetype.svg=image/svg+xml
+mimetype-file=/etc/mime.types
+
+
+# Enable caching of up to 1000 output entries
+cache-size=1000
+
+scan-path=/opt/git
+section-from-path=1
+max-repo-count=70
+repository-sort=age
+#max-stats=quarter
+#branch-sort=age
+case-sensitive-sort=0
